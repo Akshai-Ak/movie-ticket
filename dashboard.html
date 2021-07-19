@@ -1,0 +1,97 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-lg-6">
+        <h2 id="welcome">Welcome {{name}}</h2> <br> <br>
+        </div>
+        <div class="col-lg-6">
+            <button class="btn btn-danger navbar-btn" ui-sref="login">LogOut</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+        <button class="btn btn-primary navbar-btn" ng-click="cinema()" >Show</button>
+        </div>
+        <div class="col-lg-6">
+        <button class="btn btn-primary navbar-btn" ng-click="bevarage()" >Bevarage</button>
+        </div>
+    </div>
+    <div class="row" id="moviehide">
+        <div class="col-lg-4" ng-show="valid.check">
+            <h3 >Movie</h3>
+            <div  ng-repeat="x in movieList"  >
+            <p v="{{x.movieName}}" ng-click="clicks(x)" >{{x.movieName}}</p>
+             </div>
+        </div>
+        <div class="col-lg-4" ng-show="valid.check">
+            <h3>Time</h3>
+            <p  ng-repeat="x in movieList">{{x.time}}</p>
+        </div>
+        <div class="col-lg-4" ng-show="valid.check">
+            <h3>Ticket Availability</h3>
+            <p  ng-repeat="x in movieList">{{x.ticketsAvaible}}</p>
+        </div>
+        <div ng-show="fare.checked">
+        <div class="row"  >
+            <h2>Select Number of Tickets for {{moviename}}</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h4>200</h4>
+            </div>
+            <div class="col-lg-3">
+                <h4>x</h4>
+            </div>
+            <div class="colo-lg-3">
+                <input type="number" ng-model="q"  id="in">
+                <div ng-if="q > movieavail" id="a">House Full<br></div>
+    
+                <!-- <h4>{{total()}}</h4> -->
+                <h4>{{200*q}}</h4>
+            </div>
+            <div class="row text-center" >
+               <h3>Tickect Amount:{{200*q}}</h3>
+               <h3>Bevarage Amount:{{coke*70+water*40+popcorn*170+puff*90}}</h3>
+               <h3>Total:{{200*q+coke*70+water*40+popcorn*170+puff*90}}</h3>
+               <button class="btn btn-primary navbar-btn" ng-click="book()" >Pay</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container " ng-show="valids.check">
+    <div class="row" id="snack" >
+        <div class="col-lg-3">
+           <h2>Items</h2>
+           <h4>Coke</h4>
+           <h4>Water Bottle</h4>
+           <h4>Pop Corn</h4>
+           <h4>Chicken Puff</h4>
+        </div>
+        <div class="col-lg-3">
+            <h2>Rate</h2>
+            <h4>70</h4>
+            <h4>40</h4>
+            <h4>170</h4>
+            <h4>90</h4>
+         </div>
+         <div class="col-lg-3">
+            <h2>Quantity</h2>
+            <input type="number" ng-model="coke"> <br><br>
+            <input type="number"ng-model="water"> <br><br>
+            <input type="number" ng-model="popcorn"> <br><br>
+            <input type="number" ng-model="puff"> <br><br>
+         </div>
+         <div class="col-lg-3">
+            <h2>Amount</h2>
+            <h4>{{coke*70}}</h4>
+            <h4>{{water*40}}</h4>
+            <h4>{{popcorn*170}}</h4>
+            <h4>{{puff*90}}</h4>
+         </div>
+         <div class="row">
+             <h4>Bevarage Total:{{coke*70+water*40+popcorn*170+puff*90}}</h4>
+         </div>
+    </div>
+</div>
+

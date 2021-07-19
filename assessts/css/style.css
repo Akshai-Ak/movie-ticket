@@ -1,0 +1,17 @@
+body{
+    color: black;
+    background-color: brown;
+}
+.moviehide{
+    display: none;
+}
+#text{
+    color: black;
+    font-size: 3rem;
+}
+a:hover{
+    text-decoration: none;
+}
+#a{
+    color: red;
+}

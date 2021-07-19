@@ -1,0 +1,25 @@
+<body  >
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <a id="text" href="#!/login">Login</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <a id="text" href="#!/signup">SignUp</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row log">
+            <h1 class="text-center">Login</h1>
+            <form action="" ng-submit=submit() >
+            <input  ng-model="login.name" type="text" placeholder="Name" id="name"required> <br> <br>
+            <input type="password"  ng-model="login.password" placeholder="password" id="password" required> <br> <br>
+           <span class="err" style="color:red">{{ error }}</span> <br>
+            <button class="btn btn-danger navbar-btn">Login</button>
+        </form>
+    </div>
+        </div>
+    </div>
+</body>
+
